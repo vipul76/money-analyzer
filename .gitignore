@@ -1,0 +1,34 @@
+# === Java & Maven ===
+/target/
+!.mvn/wrapper/maven-wrapper.jar
+**/logs/
+*.log
+*.tmp
+
+# === IntelliJ IDEA ===
+*.iml
+.idea/
+out/
+
+# === VS Code (if used) ===
+.vscode/
+
+# === OS files ===
+.DS_Store
+Thumbs.db
+
+# === Environment / Secrets ===
+.env
+*.env
+*.key
+*.pem
+*.jks
+application-*.yml
+application-*.properties
+
+# === Other ===
+# Exclude build output
+build/
+
+# Optional: ignore generated files (e.g., Swagger)
+generated/
