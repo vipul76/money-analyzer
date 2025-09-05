@@ -1,10 +1,7 @@
 package com.moneyanalyzer.controller;
 
-import org.springframework.web.bind.annotation.RestController;
-
-@RestController
-public class RecurringTransactionController {
-   /* | ------ | ---------------------- | ---------------------------------- |
+public class AnalyticsController {
+    /*| ------ | ---------------------- | ---------------------------------- |
             | GET    | `/api/recurrings`      | List all recurring transactions    |
             | GET    | `/api/recurrings/{id}` | Get specific recurring transaction |
             | POST   | `/api/recurrings`      | Create recurring transaction       |
