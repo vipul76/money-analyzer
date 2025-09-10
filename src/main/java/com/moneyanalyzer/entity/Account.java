@@ -29,6 +29,8 @@ public class Account {
 
     private BigDecimal balance;
 
+    private AccountType accountType;
+
     @Column(name = "created_at", updatable = false)
     private LocalDateTime createdAt = LocalDateTime.now();
 

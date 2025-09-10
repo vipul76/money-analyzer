@@ -2,18 +2,27 @@ package com.moneyanalyzer.serviceImpl;
 
 import com.moneyanalyzer.dto.UserResponse;
 import com.moneyanalyzer.dto.UserSignUpRequest;
+import com.moneyanalyzer.entity.Account;
 import com.moneyanalyzer.entity.User;
 import com.moneyanalyzer.exception.InvalidCredentialsException;
 import com.moneyanalyzer.repository.UserRepository;
 import com.moneyanalyzer.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
+
+import java.math.BigDecimal;
+import java.util.Optional;
 
 
 @Service
 public class UserServiceImpl implements UserService {
     @Autowired
     UserRepository userRepository;
+
+    @Autowired
+    @Lazy
+    AccountServiceImpl accountServiceImpl;
 
     @Override
     public User validateUser(String email, String password) {
@@ -36,10 +45,21 @@ public class UserServiceImpl implements UserService {
         user.setPassword(signUpReq.getPassword());
 
         User savedUser = userRepository.saveAndFlush(user);
+
+        Account acc = new Account();
+        acc.setUser(savedUser);
+        acc.setName(savedUser.getName());
+        acc.setBalance(BigDecimal.ZERO);
+        accountServiceImpl.saveAndFlush(acc);
         return new UserResponse(savedUser.getId(), savedUser.getName(), savedUser.getEmail(),savedUser.getCreatedAt());
     }
-}
 
+
+    @Override
+    public Optional<User> findById(Long id) {
+        return userRepository.findById(id);
+    }
+}
 /*
  Optional<User> userOptional = userRepository.findByEmail(email);
         if(userOptional.isPresent() && userOptional.get().getPassword().equals(password)){
