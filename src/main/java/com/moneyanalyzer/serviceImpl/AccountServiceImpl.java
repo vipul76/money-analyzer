@@ -37,11 +37,7 @@ public class AccountServiceImpl implements AccountService {
 
     @Override
     public List<Account> findByAccountUserId(Long userId) {
-        User user = accountRepository.findByUserId(userId)
-                .orElseThrow(()->new UserNotFoundException("User Not Found"));
-
-        List<Account> accounts = accountRepository.findByUser(user);
-        return accounts != null ? accounts : Collections.emptyList();
+        return accountRepository.findByUserId(userId);
     }
 
     @Override
@@ -51,7 +47,7 @@ public class AccountServiceImpl implements AccountService {
         Account acc = new Account();
         acc.setUser(savedUser);
         acc.setName(savedUser.getName());
-        acc.setAccountType(AccountType.valueOf(request.getAccountType()));
+        acc.setAccountType(request.getAccountType());
         acc.setBalance(BigDecimal.valueOf(request.getInitialBalance()));
         Account savedAccount = accountRepository.save(acc);
         return List.of(savedAccount);

@@ -6,12 +6,14 @@ import com.moneyanalyzer.entity.User;
 import com.moneyanalyzer.exception.UserNotFoundException;
 import com.moneyanalyzer.service.AccountService;
 import com.moneyanalyzer.service.UserService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/api/accounts")
@@ -44,9 +46,12 @@ public class AccountController {
     }
 
     @PostMapping
-    public List<Account> createAccountForUser(@RequestBody AccountRequest request){
+    public List<Account> createAccountForUser(@Valid @RequestBody AccountRequest request){
         List<Account> userAccounts = accountService.findByAccountUserId(request.getUserId());
-        if(userAccounts.isEmpty()){
+        boolean accountExists = userAccounts.stream()
+                .anyMatch(acc->acc.getAccountType()==request.getAccountType());
+
+        if(!accountExists){
             User user = userService.findById(request.getUserId())
                     .orElseThrow(()-> new UserNotFoundException("User Not Found"));
            return accountService.createAccount(user,request);
