@@ -7,4 +7,5 @@ public class AnalyticsController {
             | POST   | `/api/recurrings`      | Create recurring transaction       |
             | PUT    | `/api/recurrings/{id}` | Update recurring transaction       |
             | DELETE | `/api/recurrings/{id}` | Delete recurring transaction       |*/
+
 }
