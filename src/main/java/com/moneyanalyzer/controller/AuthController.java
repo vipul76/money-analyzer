@@ -3,7 +3,6 @@ package com.moneyanalyzer.controller;
 import com.moneyanalyzer.dto.UserLoginRequest;
 import com.moneyanalyzer.dto.UserSignUpRequest;
 import com.moneyanalyzer.dto.authentication.AuthResponse;
-import com.moneyanalyzer.entity.User;
 import com.moneyanalyzer.securities.JwtUtils;
 import com.moneyanalyzer.service.AuthService;
 import com.moneyanalyzer.serviceImpl.CustomUserDetailService;

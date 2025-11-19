@@ -114,6 +114,12 @@
             <artifactId>spring-boot-starter-validation</artifactId>
         </dependency>
         <!-- -->
+        <!-- for Spring Boot 3 for implementing swagger in our application -->
+        <dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+            <version>2.3.0</version> <!-- pick latest stable -->
+        </dependency>
     </dependencies>
 
     <build>
