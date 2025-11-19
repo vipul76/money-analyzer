@@ -9,11 +9,10 @@ import java.util.Optional;
 
 @Service
 public interface UserService {
-    User validateUser(String email,String password);
 
+    User validateUser(String email,String password);
     UserResponse registerUser(UserSignUpRequest signUpReq);
 
-   /* User findByUserId(User userId);*/
-
+    //User findByUserId(User userId);
     Optional<User> findById(Long userId);
 }

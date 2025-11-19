@@ -9,13 +9,10 @@ import com.moneyanalyzer.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/users")
+@RequestMapping("/api/users")
 public class UserController {
 
     @Autowired
@@ -54,13 +51,12 @@ public class UserController {
                 new ResponseEntity<>("Invalid Credentials", HttpStatus.UNAUTHORIZED);
     }
 
-    public void logout(){
-
+    @GetMapping("/hello")
+    public String logout(){
+        return "Hello I am here active";
     }
 
     public void getAuth(){
 
     }
-
-
 }
