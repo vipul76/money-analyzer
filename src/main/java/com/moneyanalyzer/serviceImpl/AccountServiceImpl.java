@@ -2,7 +2,6 @@ package com.moneyanalyzer.serviceImpl;
 
 import com.moneyanalyzer.dto.account.AccountRequest;
 import com.moneyanalyzer.entity.Account;
-import com.moneyanalyzer.entity.AccountType;
 import com.moneyanalyzer.entity.User;
 import com.moneyanalyzer.exception.UserNotFoundException;
 import com.moneyanalyzer.repository.AccountRepository;
@@ -13,7 +12,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
-import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 

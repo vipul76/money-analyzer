@@ -1,7 +1,6 @@
 package com.moneyanalyzer.service;
 
 import com.moneyanalyzer.dto.authentication.AuthResponse;
-import com.moneyanalyzer.entity.User;
 import org.springframework.stereotype.Service;
 
 @Service
