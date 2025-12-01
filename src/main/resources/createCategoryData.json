@@ -1,0 +1,73 @@
+{
+  "id": 1,
+  "name": "Salary",
+  "type": "INCOME",
+  "icon": "💰",
+  "userSummaryDto": {
+    "id": 101,
+    "email": "vipul@gmail.com",
+    "name": "Vipul",
+    "role": "USER"
+  },
+  "transactions": [
+    {
+      "id": 5001,
+      "type": "INCOME",
+      "amount": 75000,
+      "description": "Monthly salary credited",
+      "transactionAt": "2025-11-29T10:00:00.000Z",
+      "createdAt": "2025-11-29T10:00:00.000Z",
+      "account": {
+        "id": 200,
+        "user": {
+          "id": 101,
+          "name": "Vipul",
+          "email": "vipul@gmail.com",
+          "password": "vipul",
+          "roles": [
+            "USER"
+          ],
+          "enabled": true,
+          "createdAt": "2024-01-10T10:30:00.000Z",
+          "accounts": []
+        },
+        "name": "HDFC Savings",
+        "balance": 120000,
+        "accountType": "CURRENTS",
+        "createdAt": "2024-02-05T11:00:00.000Z",
+        "transactions": []
+      },
+      "category": {
+        "id": 1,
+        "name": "Salary",
+        "type": "INCOME",
+        "icon": "💰",
+        "user": {
+          "id": 101,
+          "name": "Vipul",
+          "email": "vipul@gmail.com",
+          "password": "vipul",
+          "roles": [
+            "USER"
+          ],
+          "enabled": true,
+          "createdAt": "2024-01-10T10:30:00.000Z",
+          "accounts": []
+        },
+        "transactions": []
+      },
+      "user": {
+        "id": 101,
+        "name": "Vipul",
+        "email": "vipul@gmail.com",
+        "password": "vipul",
+        "roles": [
+          "USER"
+        ],
+        "enabled": true,
+        "createdAt": "2024-01-10T10:30:00.000Z",
+        "accounts": []
+      }
+    }
+  ]
+}

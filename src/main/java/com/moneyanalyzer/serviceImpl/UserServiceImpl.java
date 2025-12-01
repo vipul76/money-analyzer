@@ -9,6 +9,7 @@ import com.moneyanalyzer.repository.UserRepository;
 import com.moneyanalyzer.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
@@ -58,6 +59,12 @@ public class UserServiceImpl implements UserService {
     @Override
     public Optional<User> findById(Long id) {
         return userRepository.findById(id);
+    }
+
+    @Override
+    public User findByUsername(String email) {
+        return userRepository.findByEmail(email)
+                .orElseThrow(()-> new UsernameNotFoundException("user not found with email : "+email));
     }
 }
 /*

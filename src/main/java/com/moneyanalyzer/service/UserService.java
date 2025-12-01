@@ -3,11 +3,9 @@ package com.moneyanalyzer.service;
 import com.moneyanalyzer.dto.UserResponse;
 import com.moneyanalyzer.dto.UserSignUpRequest;
 import com.moneyanalyzer.entity.User;
-import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
-@Service
 public interface UserService {
 
     User validateUser(String email,String password);
@@ -15,4 +13,6 @@ public interface UserService {
 
     //User findByUserId(User userId);
     Optional<User> findById(Long userId);
+
+    User findByUsername(String username);
 }
