@@ -2,7 +2,6 @@ package com.moneyanalyzer.controller;
 
 import com.moneyanalyzer.dto.category.CategoryDto;
 import com.moneyanalyzer.dto.category.CategoryRequestDto;
-import com.moneyanalyzer.dto.category.CategoryResponseDto;
 import com.moneyanalyzer.entity.User;
 import com.moneyanalyzer.service.CategoryService;
 import com.moneyanalyzer.service.UserService;
@@ -56,4 +55,10 @@ public class CategoryController {
         return categoryResponseDto!=null? new ResponseEntity<>(categoryResponseDto,HttpStatus.CREATED):
                 new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
     }
+
+    @PostMapping("/specification")
+    public ResponseEntity<?> search(){
+        return null;
+    }
 }
+
