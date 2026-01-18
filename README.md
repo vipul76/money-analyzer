@@ -18,14 +18,14 @@ Personal money analyzing application
 | DELETE | `/api/accounts/{id}` | Delete an account            |
 
 
-| Method | Endpoint                   | Description                               |
-| ------ | -------------------------- | ----------------------------------------- |
-| GET    | `/api/transactions`        | Get all transactions for user             |
-| GET    | `/api/transactions/{id}`   | Get a specific transaction                |
-| POST   | `/api/transactions`        | Create a new transaction                  |
-| PUT    | `/api/transactions/{id}`   | Update a transaction                      |
-| DELETE | `/api/transactions/{id}`   | Delete a transaction                      |
-| GET    | `/api/transactions/filter` | Filter by date range (`?from=...&to=...`) |
+| Method | Endpoint                   | Description                                |
+| ------ | -------------------------- |--------------------------------------------|
+| GET    | `/api/transactions`        | Get all transactions for+++++++++++++ user |
+| GET    | `/api/transactions/{id}`   | Get a specific transaction                 |
+| POST   | `/api/transactions`        | Create a new transaction                   |
+| PUT    | `/api/transactions/{id}`   | Update a transaction                       |
+| DELETE | `/api/transactions/{id}`   | Delete a transaction                       |
+| GET    | `/api/transactions/filter` | Filter by date range (`?from=...&to=...`)  |
 
 
 | Method | Endpoint               | Description                         |

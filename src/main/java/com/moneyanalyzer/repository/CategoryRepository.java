@@ -12,4 +12,8 @@ import java.util.List;
 public interface CategoryRepository extends JpaRepository<Category, Long> {
     List<Category> findByUserOrUserIsNull(User user); // supports global + user-defined categories
     List<Category> findByTypeAndUserOrUserIsNull(TransactionType type, User user);
+
+    //Category findByName(String name);
+
+    Category findByNameAndUserId(String name, Long id);
 }

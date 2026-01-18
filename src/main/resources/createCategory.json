@@ -1,0 +1,18 @@
+{
+  "id": 1,
+  "name": "food",
+  "type": "EXPENSE",
+  "icon": "food",
+  "user": [{
+    "id": 1,
+    "name": "vipul nilesh",
+    "emailId": "vipul@gmail.com"
+  },{
+
+  }],
+  "transaction": [{
+
+  }
+
+  ]
+}

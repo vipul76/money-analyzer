@@ -1,0 +1,78 @@
+4. “What should be done for the actual money app?”
+
+Here’s a simple roadmap for your Money Analyzer 🧩
+
+4.1 Core Entities
+
+User – login, profile
+
+Account – bank/wallet/credit-card, balance
+
+Category – “Food”, “Rent”, “Salary” (global + user custom)
+
+Transaction – amount, type (INCOME/EXPENSE/TRANSFER), date, note, account, category
+
+(Later) Budget, Goal, RecurringTransaction
+
+4.2 Typical APIs
+
+Auth
+
+POST /api/auth/register
+
+POST /api/auth/login
+
+GET /api/auth/me
+
+Accounts
+
+GET /api/accounts – list all accounts of current user
+
+POST /api/accounts – create new account
+
+PUT/PATCH /api/accounts/{id} – rename/update
+
+DELETE /api/accounts/{id} – delete (maybe soft delete)
+
+Transactions
+
+GET /api/transactions?from=...&to=...&accountId=...
+
+POST /api/transactions – add expense/income/transfer
+
+PUT/PATCH /api/transactions/{id}
+
+DELETE /api/transactions/{id}
+
+Categories
+
+GET /api/categories – global + user-created
+
+POST /api/categories – create custom category
+
+Reports (later)
+
+GET /api/reports/summary?month=2025-11
+
+GET /api/reports/by-category?...
+
+All of these (except /api/auth/**) should be JWT-protected using your existing SecurityConfig.
+
+5. Putting it together – user flow
+
+User calls POST /api/auth/register.
+
+User calls POST /api/auth/login → gets JWT token.
+
+Frontend/Postman sends:
+
+Authorization: Bearer <token>
+
+
+for every future request.
+
+User calls POST /api/accounts to create “HDFC Savings”.
+
+User calls POST /api/transactions to add expenses/income.
+
+If you want, next step I can help you design the full Account entity + controller methods for your app based on what you already coded.
