@@ -39,7 +39,7 @@ public class Account {
     private LocalDateTime createdAt = LocalDateTime.now();
 
     @OneToMany(mappedBy = "account", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Transaction> transactions;
+    private List<TransactionEntity> transactions;
 
     // Getters, setters, constructors
 }

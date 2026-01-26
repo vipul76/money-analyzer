@@ -1,0 +1,6 @@
+Creating indexes in the database
+1)Transaction
+    SELECT * FROM money_analyzer.transactions;
+    CREATE INDEX idx_tx_user_date
+    ON transactions(user_id, transaction_at DESC);
+

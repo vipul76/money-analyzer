@@ -15,6 +15,5 @@ public interface AccountService {
     List<Account> findByAccountUserId(Long userId);
     Optional<Account> getAccountById(Long id);
     List<Account> createAccount(User userId, AccountRequest request);
-
     Optional<Object> findByUserId(Long userId);
 }

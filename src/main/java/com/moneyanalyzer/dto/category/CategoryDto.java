@@ -1,10 +1,8 @@
 package com.moneyanalyzer.dto.category;
 
 import com.moneyanalyzer.dto.UserSummaryDto;
-import com.moneyanalyzer.entity.Transaction;
+import com.moneyanalyzer.entity.TransactionEntity;
 import com.moneyanalyzer.entity.TransactionType;
-import com.moneyanalyzer.entity.User;
-import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -23,5 +21,5 @@ public class CategoryDto {
     private TransactionType type; // INCOME or EXPENSE
     private String icon;
     private UserSummaryDto userSummaryDto;
-    private List<Transaction> transactions;
+    private List<TransactionEntity> transactions;
 }

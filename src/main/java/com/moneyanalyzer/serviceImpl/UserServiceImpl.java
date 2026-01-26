@@ -9,6 +9,10 @@ import com.moneyanalyzer.repository.UserRepository;
 import com.moneyanalyzer.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
+import org.springframework.security.authentication.AnonymousAuthenticationToken;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
@@ -66,10 +70,17 @@ public class UserServiceImpl implements UserService {
         return userRepository.findByEmail(email)
                 .orElseThrow(()-> new UsernameNotFoundException("user not found with email : "+email));
     }
-}
-/*
- Optional<User> userOptional = userRepository.findByEmail(email);
-        if(userOptional.isPresent() && userOptional.get().getPassword().equals(password)){
-            return userOptional.get();
+
+    @Override
+    public Optional<User> getCurrentUser(){
+        Optional<User> currentUser = Optional.empty();
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        if(authentication!=null
+                && authentication.isAuthenticated()){
+            String email = authentication.getName();
+            currentUser = userRepository.findByEmail(email);
         }
- */
+        System.out.println(currentUser);
+        return currentUser;
+    }
+}
